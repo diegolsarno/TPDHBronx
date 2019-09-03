@@ -1,0 +1,31 @@
+
+
+body{
+    background: rgb(187, 187, 187);
+}
+
+/*tablet*/
+@media (min-width: 768px){
+.container{
+max-width: 720;
+margin: 0 auto;
+}
+}
+
+/*smartphone*/
+
+@media(min-width: 320px){
+    .container{
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}
+
+/*desktop*/
+
+@media(min-width: 1200px){
+    .container{
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+}
