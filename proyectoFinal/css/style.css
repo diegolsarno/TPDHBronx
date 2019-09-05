@@ -26,3 +26,9 @@ body{
 ul {
   list-style-type: none;
 }
+
+.banner {
+  height: 300px;
+  overflow: hidden;
+ margin-top: 20px; 
+}
