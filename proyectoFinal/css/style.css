@@ -1,6 +1,6 @@
 
 body{
-    background: rgb(187, 187, 187);
+    background: #fff;
 }
 
 .logogif{
@@ -18,45 +18,11 @@ body{
     margin-left: 29.8%;
 }
 
-
-
-
-/*tablet*/
-@media (min-width: 768px){
-.container{
-max-width: 720;
-margin: 0 auto;
-}
-}
-
-/*smartphone*/
-
-@media(min-width: 320px){
-    .container{
-        max-width: 480px;
-        margin: 0 auto;
-    }
-}
-
-/*desktop*/
-
-@media(min-width: 1200px){
-    .container{
-        max-width: 1024px;
-        margin: 0 auto;
-    }
-}
 .cuadrado{
-    background-color: rgb(187, 187, 187);
+    background-color: #fff;
     border:1px solid black;
 }
 
-.list-unstyled{
-    flex-direction: column;
-    align-content: space-between;
-}
-.list-unstyled2{
-    flex-direction: column;
-    align-content: space-around;
-    margin-right: 10px;
+ul {
+  list-style-type: none;
 }
