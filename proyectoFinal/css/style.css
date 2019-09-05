@@ -30,5 +30,25 @@ ul {
 .banner {
   height: 300px;
   overflow: hidden;
- margin-top: 20px; 
+ margin-top: 20px;
+}
+
+.social-media{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.social-media a{
+  font-size: 30px;
+  color: black;
+  padding: 20px;
+  background-color: #fff;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
