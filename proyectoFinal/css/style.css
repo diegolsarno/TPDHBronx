@@ -9,6 +9,17 @@ body{
     justify-content: center;
     background-color: none;
 }
+.carousel{
+    width:400px;
+    height:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 29.8%;
+}
+
+
+
 
 /*tablet*/
 @media (min-width: 768px){
