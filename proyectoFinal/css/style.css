@@ -3,13 +3,16 @@ body{
     background: #fff;
 }
 
+
 .logogif{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: none;
+    background-color: #fff;
 }
-.carousel{
+
+}
+.carousel {
     width:400px;
     height:400px;
     display: flex;
@@ -17,10 +20,8 @@ body{
     justify-content: center;
     margin-left: 29.8%;
 }
-
-.car bg-light{
-    background-color: #fff;
-
+.cuadrado {
+background-color: #fff;
 }
 
 ul {
@@ -38,6 +39,7 @@ ul {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+
 }
 .social-media a{
   font-size: 30px;
