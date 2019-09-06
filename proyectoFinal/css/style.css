@@ -10,8 +10,10 @@ body{
     justify-content: center;
     background-color: #fff;
 }
-
+.cuadrado {
+background-color: #fff;
 }
+
 .carousel {
     width:400px;
     height:400px;
@@ -20,9 +22,7 @@ body{
     justify-content: center;
     margin-left: 29.8%;
 }
-.cuadrado {
-background-color: #fff;
-}
+
 
 ul {
   list-style-type: none;
