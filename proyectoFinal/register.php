@@ -1,3 +1,47 @@
+<?php
+include "funciones.php";
+$errores = [];
+$nombreOk = "";
+$emailOk = "";
+
+//si el formulario viene por POST;
+
+if($_POST){
+
+  //tenemos que detectar errores y mostrarlos al usuario.
+  $errores = validarRegistro($_POST);
+
+  $nombreOk = trim($_POST["name"]);
+  $emailOk = trim($_POST["email"]);
+
+  // Opcional crear if para cada asignación de datos correctos. Solo necesitamos colocar la cariable en el value.
+  // if(!isset($errores["email"])){
+  //   $emailOk = $_POST["email"];
+  // }
+
+  //Si no hay errores;
+  if(!$errores){
+    // Crear un usuario
+    $usuario = armarUsuario();
+
+    //Guardarlo en alguna parte
+    guardarUsuario($usuario);
+
+    //Subir la imagen de perfil
+
+    //Auto Loguear usuario (Opcional);
+
+    //Redirigirlo a página Exito;
+    header("Location:index.php");
+    exit;
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +63,13 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">REGISTER</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.html">LOGIN</a>
+        <a class="nav-link" href="login.php">LOGIN</a>
       </li>
     </ul>
   </div>

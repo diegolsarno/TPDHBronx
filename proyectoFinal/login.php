@@ -1,3 +1,21 @@
+<?php
+include "funciones.php";
+$errores = [];
+
+if($_POST){
+
+  $errores = validarLogin($_POST);
+
+  if(!$errores){
+    loguearUsuario();
+    header("Location:index.php");
+    exit;
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +37,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="register.html">REGISTER</a>
+        <a class="nav-link" href="register.php">REGISTER</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">LOGIN</a>
@@ -32,8 +50,11 @@
 </nav>
 
  <body>
-  <div class="card bg-light">
-    <article class="card-body mx-auto" style="max-width: 400px;">
+   <br>
+  <div class="row">
+
+  <div class="card bg-light col-md-4 offset-md-4">
+
         <h4 class="card-title mt-3 text-center">Iniciar sesion</h4>
         <form>
         <div class="form-group input-group">
@@ -48,14 +69,16 @@
              </div>
             <input name="" class="form-control" placeholder="Contaseña" type="password">
         </div> <!-- form-group// -->
-        <div class="form-group input-group">
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Crear Cuenta </button>
-        </div> <!-- form-group// -->
-        <p class="text-center">Tenes una cuenta? <a href="">Registrate</a> </p>
+
+
+            <button type="submit" class="btn btn-primary btn-block"> LOGIN</button>
+
+         <!-- form-group// -->
+        <p class="text-center"><br><br>Tenes una cuenta? <a href="">Registrate</a> </p>
     </form>
-    </article>
-    </div>
+  </div>
+  </div>
+
 </body>
 <!-- Footer -->
   <footer class="page-footer font-small stylish-color-dark pt-4">

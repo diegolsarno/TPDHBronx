@@ -1,3 +1,10 @@
+<?php
+include "funciones.php";
+
+var_dump($_SESSION);
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,10 +31,10 @@
         <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="register.html">REGISTER</a>
+        <a class="nav-link" href="register.php">REGISTER</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.html">LOGIN</a>
+        <a class="nav-link" href="login.php">LOGIN</a>
       </li>
     </ul>
   </div>
