@@ -117,7 +117,7 @@ if($_POST){
                 placeholder="Nombre Completo"
                 type="text"
               />
-              <?php if(isset($errores["name"])):?><!--  Si hay errores mostramos el campo input vacío  -->
+             
             </div>
             <!-- form-group// -->
 
@@ -127,7 +127,7 @@ if($_POST){
                 <span class="input-group-text">
                   <i class="fa fa-envelope"></i>
                 </span>
-                <?php else: ?>
+                
               </div>
               <input
                 name=""
