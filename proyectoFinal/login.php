@@ -1,18 +1,40 @@
 <?php
-include "funciones.php";
-$errores = [];
+//Login
 
-if($_POST){
+function validarLogin($datos){
+  $errores = [];
 
-  $errores = validarLogin($_POST);
-
-  if(!$errores){
-    loguearUsuario();
-    header("Location:index.php");
-    exit;
+  //Email
+  if(strlen($datos["email"]) == 0){
+    $errores["email"] = "El campo email debe estar completo";
+  } else if(!filter_var($datos["email"], FILTER_VALIDATE_EMAIL)){
+    $errores["email"] = "Por favor ingrese un email con formato válido";
+  } else if(!buscarUsuarioPorMail($datos["email"])) {
+    $errores["email"] = "El usuario no existe Por favor regístrese.";
   }
 
+  //Password
+  if(strlen($datos["pass"]) == 0){
+    $errores["pass"] = "El campo password debe estar completo";
+  } else {
+    $usuario = buscarUsuarioPorMail($datos["email"]);
+    if( !password_verify($datos["pass"], $usuario["password"]) ){
+    $errores["pass"] = "La contraseña ingresada es incorrecta";
+    }
+  }
+  
+  return $errores;
 }
+
+function loguearUsuario(){
+  $_SESSION["email"] = $_POST["email"];
+}
+
+function usuarioLogueado(){
+  return isset($_SESSION["email"]);
+}
+
+
 
 ?>
 
@@ -61,13 +83,13 @@ if($_POST){
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
              </div>
-            <input name="" class="form-control" placeholder="Nombre Completo" type="text">
+            <input name="name" class="form-control" placeholder="Nombre Completo" type="text">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
              </div>
-            <input name="" class="form-control" placeholder="Contaseña" type="password">
+            <input name="pass" class="form-control" placeholder="Contaseña" type="password">
         </div> <!-- form-group// -->
 
 

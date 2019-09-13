@@ -1,28 +1,25 @@
-
-body{
-    background: #fff;
+body {
+  background: #fff;
 }
 
-
-.logogif{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
+.logogif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }
 .cuadrado {
-background-color: #fff;
+  background-color: #fff;
 }
 
 .carousel {
-    width:400px;
-    height:400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 29.8%;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 29.8%;
 }
-
 
 ul {
   list-style-type: none;
@@ -31,17 +28,16 @@ ul {
 .banner {
   height: 300px;
   overflow: hidden;
- margin-top: 20px;
+  margin-top: 20px;
 }
 
-.social-media{
+.social-media {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-
 }
-.social-media a{
+.social-media a {
   font-size: 30px;
   color: black;
   padding: 20px;
