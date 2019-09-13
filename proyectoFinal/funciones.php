@@ -22,7 +22,8 @@ function validarRegistro($datos){
   } //Validar con expresion regular que permita espacios intermedios.
 
   //Email
-  if(strlen($datosFinales["email"]) == 0){
+  if(strlen($datosFinales["email"]) == 0){ 
+    var_dump($datosFinales);
     $errores["email"] = "El campo email debe estar completo";
   } else if(!filter_var($datosFinales["email"], FILTER_VALIDATE_EMAIL)){
     $errores["email"] = "Por favor ingrese un email con formato válido";

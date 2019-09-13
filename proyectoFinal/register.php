@@ -5,7 +5,7 @@ $nombreOk = "";
 $emailOk = "";
 
 //si el formulario viene por POST;
-
+//var_dump($errores["name"]);
 if($_POST){
 
   //tenemos que detectar errores y mostrarlos al usuario.
@@ -80,15 +80,22 @@ if($_POST){
       <!-- div de todo login -->
       <article class="card-body mx-auto" style="max-width: 400px;">
         <h4 class="card-title mt-3 text-center">Crear cuenta</h4>
-        <form>
+        <form method="POST" action="#">
           <div class="form-group input-group">
+           
             <!-- cuadradito nombre-->
             <div class="input-group-prepend">
               <span class="input-group-text">
                 <i class="fa fa-user"></i>
               </span>
             </div>
-            <input name="name" class="form-control" method="POST" placeholder="Nombre Completo" type="text" />
+            
+            <?php if(isset($errores["name"])):?><!--  Si hay errores mostramos el campo input vacío  -->
+            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $_POST["name"]; ?>">
+            <span class="small"><?= $errores["name"] ?></span>
+          <?php else: ?>
+          <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nombreOk; ?>">
+          <?php endif ?>
 
           </div>
           <!-- form-group// -->
