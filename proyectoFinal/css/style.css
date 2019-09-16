@@ -31,12 +31,31 @@ ul {
   margin-top: 20px;
 }
 
+
+/*clases productos*/
+.photo-container{
+  position: relative;
+}
+.photo{
+  width: 100%;
+}
+.product{
+    width:50%;
+    float:left;
+  }
+  .vip-products{
+    overflow: hidden;
+  }
+/* hasta aca es lo de productos*/
+
+
 .social-media {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
 }
+
 .social-media a {
   font-size: 30px;
   color: black;
