@@ -1,4 +1,5 @@
 <?php
+  
 //Login
 
 function validarLogin($datos){
@@ -29,6 +30,8 @@ function validarLogin($datos){
 function loguearUsuario(){
   $_SESSION["email"] = $_POST["email"];
 }
+//para agregar cuando validen el login
+ //  && (isset($_POST["recordar"]) && !empty($_POST["recordar"])//
 
 function usuarioLogueado(){
   return isset($_SESSION["email"]);
@@ -70,6 +73,7 @@ function usuarioLogueado(){
           <li class="nav-item">
             <a class="nav-link" href="#">LOGIN</a>
           </li>
+          
         </ul>
       </div>
     </nav>
@@ -86,7 +90,7 @@ function usuarioLogueado(){
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
               </div>
-              <input name="name" class="form-control" placeholder="Nombre Completo" type="text">
+              <input name="email" class="form-control" placeholder="Email" type="text">
             </div> <!-- form-group// -->
             <div class="form-group input-group">
               <div class="input-group-prepend">
@@ -97,9 +101,13 @@ function usuarioLogueado(){
 
 
             <button type="submit" class="btn btn-primary btn-block"> LOGIN</button>
-
+            <br>
+              <div class="row col-md-12">
+                <p class="text-center">Recuerdame</p> 
+                <input type="checkbox" name="recordar" checked>
+              </div>
             <!-- form-group// -->
-            <p class="text-center"><br><br>Tenes una cuenta? <a href="">Registrate</a> </p>
+            <p class="text-center">No tienes una cuenta? <a href="">Registrate</a> </p>
           </form>
         </div>
       </div>
