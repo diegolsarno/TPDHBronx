@@ -1,5 +1,5 @@
 <?php
-  
+
 //Login
 
 function validarLogin($datos){
@@ -73,7 +73,7 @@ function usuarioLogueado(){
           <li class="nav-item">
             <a class="nav-link" href="#">LOGIN</a>
           </li>
-          
+
         </ul>
       </div>
     </nav>
@@ -102,12 +102,12 @@ function usuarioLogueado(){
 
             <button type="submit" class="btn btn-primary btn-block"> LOGIN</button>
             <br>
-              <div class="row col-md-12">
-                <p class="text-center">Recuerdame</p> 
+              <div class="text-center">
                 <input type="checkbox" name="recordar" checked>
+                <label class="form-check-label" for="exampleCheck1">  Recordarme</label>
               </div>
             <!-- form-group// -->
-            <p class="text-center">No tienes una cuenta? <a href="">Registrate</a> </p>
+            <p class="text-center col-12">No tienes una cuenta?<a href="">   Registrate</a> </p>
           </form>
         </div>
       </div>
