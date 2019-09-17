@@ -82,10 +82,10 @@
 
 
 			<div class="banner">
-				<img src="productos/fondo1.jpg" class="img-fluid" alt="Responsive image">
+				<img src="productos/DSC02168.jpg" class="img-fluid" alt="Responsive image">
 			</div>
 			<div class="banner">
-				<img src="productos/fondo4.jpg" class="img-fluid" alt="Responsive image">
+				<img src="productos/DSC02174.jpg" class="img-fluid" alt="Responsive image">
 			</div>
 
 
