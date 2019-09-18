@@ -39,6 +39,7 @@ ul {
 }
 .photo{
   width: 100%;
+  margin-left: 20%;
 }
 .product{
     width:50%;
@@ -52,6 +53,9 @@ ul {
   height: 400px;
   width: 400px;
 
+  }
+  .texto {
+    text-align: center;
   }
 /* hasta aca es lo de productos*/
 
