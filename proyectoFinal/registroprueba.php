@@ -1,53 +1,38 @@
 <?php
-include "funciones.php";
+//Definimos la codificación de la cabecera.
+header('Content-Type: text/html; charset=utf-8');
+//Importamos el archivo con las validaciones.
+require_once 'funciones/validaciones.php';
+//Guarda los valores de los campos en variables, siempre y cuando se haya enviado el formulario, sino se guardará null.
+$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+$telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
+//Este array guardará los errores de validación que surjan.
+$errores = array();
+//Pregunta si está llegando una petición por POST, lo que significa que el usuario envió el formulario.
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   //Valida que el campo nombre no esté vacío.
+   if (!validaRequerido($nombre)) {
+      $errores[] = 'El campo nombre es incorrecto.';
+   }
+   //Valida la edad con un rango de 3 a 130 años.
 
 
-
-$errores = [];
-$nombreOk = "";
-$emailOk = "";
-
-//si el formulario viene por POST;
-
-if($_POST){
-
-  //tenemos que detectar errores y mostrarlos al usuario.
-  $errores = validarRegistro($_POST);
-
-  $nombreOk = trim($_POST["name"]);
-  $emailOk = trim($_POST["email"]);
-
-  // Opcional crear if para cada asignación de datos correctos. Solo necesitamos colocar la cariable en el value.
-  // if(!isset($errores["email"])){
-  //   $emailOk = $_POST["email"];
-  // }
-  $hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-  $okPass = password_verify("123", $hash);
-
-
-  //Si no hay errores;
-  if(!$errores){
-    // Crear un usuario
-    //$usuario = armarUsuario();
-    $usuario = new Usuario($_POST);
-
-    //Guardarlo en alguna parte
-    //guardarUsuario($usuario);
-    $json->guardarUsuario($usuario, $file);
-
-    //Subir la imagen de perfil
-
-    //Auto Loguear usuario (Opcional);
-
-    //Redirigirlo a página Exito;
-    header("Location:home.php");
-    exit;
-    }
+   //Valida que el campo email sea correcto.
+   if (!validaEmail($email)) {
+      $errores[] = 'El campo email es incorrecto.';
+   }
+   if (!validaTelefono($telefono)) {
+      $errores[] = 'El campo telefono es incorrecto.';
+   }
+   //Verifica si ha encontrado errores y de no haber redirige a la página con el mensaje de que pasó la validación.
+   if(!$errores){
+      header('Location: validado.php');
+      exit;
+   }
 }
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,18 +74,7 @@ if($_POST){
       <!-- div de todo login -->
       <article class="card-body mx-auto" style="max-width: 400px;">
         <h4 class="card-title mt-3 text-center">Crear cuenta</h4>
-
-        <?php if($errores):?>
-              <ul class="col-md-6 offset-md-3 alert alert-danger">
-
-                <?php foreach ($errores as $error): ?>
-                  <li><?= $error  ?></li>
-                <?php endforeach ?>
-
-              </ul>
-        <?php endif ?>
-
-        <form method="POST" action="#">
+        <form method="POST" action="index.php">
           <div class="form-group input-group">
 
             <!-- cuadradito nombre-->
@@ -110,17 +84,12 @@ if($_POST){
               </span>
             </div>
 
-              <?php if(isset($errores["name"])):?>
-            <!--  Si hay errores mostramos el campo input vacío  -->
-
-            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="">
-
-            <span class="small"></span>
-
-            <?php else: ?>
-            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nombreOk ?>">
-            <?php endif ?>
-
+            <?php if(isset($errores["name"])):?><!--  Si hay errores mostramos el campo input vacío  -->
+            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $_POST["name"]; ?>">
+            <span class="small"><?= $errores["name"] ?></span>
+          <?php else: ?>
+          <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nombreOk; ?>">
+          <?php endif ?>
 
           </div>
           <!-- form-group// -->
@@ -133,14 +102,7 @@ if($_POST){
               </span>
 
             </div>
-
-            <?php if(isset($errores["email"])):?>
-
-            <input name="email" class="form-control" placeholder="Email" type="email" />
-          <?php else: ?>
-           <input type="text" id="email" class="form-control" placeholder="email" name="email" value="<?= $emailOk?>">
-         <?php endif?>
-
+            <input name="" class="form-control" placeholder="Email" type="email" />
           </div>
           <!-- form-group// -->
 
@@ -164,11 +126,7 @@ if($_POST){
                 <i class="fa fa-lock"></i>
               </span>
             </div>
-            <?php if(isset($errores["password"])):?>
-            <input name="password" class="form-control" placeholder="Contraseña" type="password" />
-          <?php else: ?>
-           <input type="pass" id="pass" class="form-control" placeholder="Contraseña" name="pass" value="">
-         <?php endif?>
+            <input class="form-control" placeholder="Contraseña" type="password" />
           </div>
           <!-- form-group// -->
 
@@ -178,11 +136,7 @@ if($_POST){
                 <i class="fa fa-lock"></i>
               </span>
             </div>
-            <?php if(isset($errores["password"])):?>
-            <input name="pass2" class="form-control" placeholder="Repetir Contraseña" type="password" />
-          <?php else: ?>
-           <input type="pass" id="pass" class="form-control" placeholder="Repetir contraseña" name="pass" value="">
-         <?php endif?>
+            <input class="form-control" placeholder="Repetir Contraseña" type="password" />
           </div>
           <!-- form-group// -->
 
