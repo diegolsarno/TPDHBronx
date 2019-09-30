@@ -51,35 +51,41 @@
 		<div class="cuadrado">
 
 			<!-- LOGO QUE GIRA -->
+		
 
 			<div class="logogif">
 				<img id="comp-jyuim62timgimage" style="object-position: 50% 50%; width:400px; height: 400px; object-fit: cover;" alt="giphy.gif" data-type="image" itemprop="image"
 					src="https://static.wixstatic.com/media/36efdc_9fea52cf5b7d4d2b9a07f1f6744102ab~mv2.gif">
 			</div>
+			<!--Carrousel de fotos -->
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="productos/zetaperfo.jpg" class="d-block w-100" alt="img">
+    </div>
+    <div class="carousel-item">
+      <img src="productos/sillon.jpg" class="d-block w-100" alt="img">
+    </div>
+    <div class="carousel-item">
+      <img src="productos/trianglemini.jpg" class="d-block w-100" alt="img">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-			<div id="carouselExampleInterval" class="carousel" data-ride="carousel style=">
-				<div class="carousel-inner">
-					<div class="carousel-item active" data-interval="10000">
-						<img src="productos/zetaperfo.jpg" class="d-block w-100" alt="img">
-					</div>
-					<div class="carousel-item" data-interval="2000">
-						<img src="productos/sillon.jpg" class="d-block w-100" alt="img">
-					</div>
-					<div class="carousel-item" data-interval="2000">
-						<img src="productos/trianglemini.jpg" class="d-block w-100" alt="img">
-					</div>
-				</div>
-				<a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-
-
+			<!-- Fotos decoracion -->
 
 			<div class="banner">
 				<img src="productos/DSC02168.jpg" class="img-fluid" alt="Responsive image">
