@@ -60,7 +60,7 @@ if($_POST){
         <div class="card bg-light col-md-4 offset-md-4">
 
           <h4 class="card-title mt-3 text-center">Iniciar sesion</h4>
-          <form>
+          <form method="POST" action="#">
             <div class="form-group input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -71,7 +71,7 @@ if($_POST){
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
               </div>
-              <input name="pass" class="form-control" placeholder="Contaseña" type="password">
+              <input name="password" class="form-control" placeholder="Contaseña" type="password">
             </div> <!-- form-group// -->
 
 

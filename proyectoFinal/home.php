@@ -1,3 +1,10 @@
+<?php
+include "funciones.php";
+//include "logout.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +33,19 @@
 						<a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
+					  <?php if(!usuarioLogueado()):?>
 						<a class="nav-link" href="register.php">REGISTER</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="login.php">LOGIN</a>
+						<?php endif ?>
 					</li>
-					</li>
+				</li>
+				<li>
+				<?php if(usuarioLogueado()):?>
+				<a class="nav-link" href="register.php">LOG OUT</a>
+				<?php endif ?>
+				</li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           PRODUCTOS
