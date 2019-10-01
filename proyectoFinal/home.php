@@ -51,14 +51,15 @@
 		<div class="cuadrado">
 
 			<!-- LOGO QUE GIRA -->
-		
 
-			<div class="logogif">
+
+
+			<div class="logogif img-fluid. max-width: 100%">
 				<img id="comp-jyuim62timgimage" style="object-position: 50% 50%; width:400px; height: 400px; object-fit: cover;" alt="giphy.gif" data-type="image" itemprop="image"
 					src="https://static.wixstatic.com/media/36efdc_9fea52cf5b7d4d2b9a07f1f6744102ab~mv2.gif">
 			</div>
 			<!--Carrousel de fotos -->
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<div id="carouselExampleIndicators" class="carousel slide rounded mx-auto d-block" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
