@@ -13,6 +13,13 @@
             "apellido": "noso",
             "email": "dylan@dh.com",
             "password": "$2y$10$zmCRpcZmBK.THJ15YIIbouQYcgQFqXL35hhjjdDw\/1g88Pfy6mAoS"
+        },
+        {
+            "id": 3,
+            "nombre": "juan",
+            "apellido": "perez",
+            "email": "j@p.com",
+            "password": "$2y$10$Zt3htewmxzpItTvl\/gGTG.mCF2Mzg1XvLR8cUGlY36ZxQVm0LUO1e"
         }
     ]
 }
