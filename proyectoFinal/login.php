@@ -66,13 +66,18 @@ if($_POST){
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
               </div>
               <input name="email" class="form-control" placeholder="Email" type="text">
-            </div> <!-- form-group// -->
+            </div>
+
+            <!-- form-group// -->
+
             <div class="form-group input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
               </div>
               <input name="password" class="form-control" placeholder="Contaseña" type="password">
-            </div> <!-- form-group// -->
+            </div>
+
+            <!-- form-group// -->
 
 
             <button type="submit" class="btn btn-primary btn-block"> LOGIN</button>
@@ -81,14 +86,18 @@ if($_POST){
                 <input type="checkbox" name="recordar" checked>
                 <label class="form-check-label" for="exampleCheck1">  Recordarme</label>
               </div>
+
             <!-- form-group// -->
+
             <p class="text-center col-12">No tienes una cuenta?<a href="">   Registrate</a> </p>
           </form>
         </div>
       </div>
 
     </body>
+
     <!-- Footer -->
+
     <footer class="page-footer font-small stylish-color-dark pt-4">
       <!-- Footer Links -->
       <div class="container text-center">

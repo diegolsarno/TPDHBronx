@@ -5,28 +5,33 @@ function validarRegistro($datos){
   $errores = [];
   $datosFinales = [];
 
-  // Limpia espacios al cominenzo y la final de cada campo.
+  // Limpia espacios al cominenzo y al final de cada campo.
+
   foreach ($datos as $key => $value) {
-    //¿Cuándo no debe trimear?
+
     $datosFinales[$key] = trim($value);
   }
 
   //Validaciones
-  //=====================
+
 
   //Nombre
   if(strlen($datosFinales["name"]) == 0){
     $errores["name"] = "El campo nombre debe estar completo";
   } else if (!ctype_alpha($datosFinales["name"])){
     $errores["name"] = "Por favor ingrese caracteres alfabéticos";
-  } //Validar con expresion regular que permita espacios intermedios.
+  }
+
+  //Validar con expresion regular que permita espacios intermedios.
 
   //apellido
   if(strlen($datosFinales["apellido"]) == 0){
     $errores["apellido"] = "El campo Apellido debe estar completo";
   } else if (!ctype_alpha($datosFinales["apellido"])){
     $errores["apellido"] = "Por favor ingrese caracteres alfabéticos";
-  } //Validar con expresion regular que permita espacios intermedios.
+  }
+
+   //Validar con expresion regular que permita espacios intermedios.
 
   //Email
   if(strlen($datosFinales["email"]) == 0){
@@ -43,7 +48,7 @@ function validarRegistro($datos){
     $errores["password"] = "La contraseña debe tener al menos 4 caracteres";
   }
 
-  //retype Password
+  //Reingresar Password
   if(strlen($datosFinales["password"]) === 0){
     $errores["repetirContrasenia"] = "El campo no puede estar vacío.";
   } else if($datosFinales["password"] !== $datosFinales["repetirContrasenia"]){
@@ -84,8 +89,10 @@ function guardarUsuario($user){
   file_put_contents("db.json", $json);
 }
 
+//Buscar usario por Mail
+
 function buscarUsuarioPorMail($email){
-  //¿Qué pasa si no hay archivo .json
+
   if (file_exists("db.json")){
 
   $json = file_get_contents("db.json");

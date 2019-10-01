@@ -19,7 +19,7 @@ var_dump($errores);
   $emailOk = trim($_POST["email"]);
   $apellidoOk = trim($_POST["apellido"]);
 
-  // Opcional crear if para cada asignación de datos correctos. Solo necesitamos colocar la cariable en el value.
+
   // if(!isset($errores["email"])){
   //   $emailOk = $_POST["email"];
   // }
@@ -37,11 +37,7 @@ var_dump($errores);
     //guardarUsuario($usuario);
     guardarUsuario($usuario, $file);
 
-    //Subir la imagen de perfil
-
-    //Auto Loguear usuario (Opcional);
-
-    //Redirigirlo a página Exito;
+    //Redirige a página Exito;
     header("Location:home.php");
     exit;
     }
