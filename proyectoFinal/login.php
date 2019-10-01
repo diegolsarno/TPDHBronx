@@ -1,4 +1,20 @@
+<?php
+include "funciones.php";
+$errores = [];
 
+if($_POST){
+
+  $errores = validarLogin($_POST);
+
+  if(!$errores){
+    loguearUsuario();
+    header("Location:home.php");
+    exit;
+  }
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

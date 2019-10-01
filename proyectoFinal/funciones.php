@@ -21,8 +21,15 @@ function validarRegistro($datos){
     $errores["name"] = "Por favor ingrese caracteres alfabéticos";
   } //Validar con expresion regular que permita espacios intermedios.
 
+  //apellido
+  if(strlen($datosFinales["apellido"]) == 0){
+    $errores["apellido"] = "El campo Apellido debe estar completo";
+  } else if (!ctype_alpha($datosFinales["apellido"])){
+    $errores["apellido"] = "Por favor ingrese caracteres alfabéticos";
+  } //Validar con expresion regular que permita espacios intermedios.
+
   //Email
-  if(strlen($datosFinales["email"]) == 0){ 
+  if(strlen($datosFinales["email"]) == 0){
     var_dump($datosFinales);
     $errores["email"] = "El campo email debe estar completo";
   } else if(!filter_var($datosFinales["email"], FILTER_VALIDATE_EMAIL)){
@@ -32,15 +39,15 @@ function validarRegistro($datos){
   }
 
   //Password
-  if(strlen($datosFinales["pass"]) < 4){
-    $errores["pass"] = "La contraseña debe tener al menos 4 caracteres";
+  if(strlen($datosFinales["password"]) < 4){
+    $errores["password"] = "La contraseña debe tener al menos 4 caracteres";
   }
 
   //retype Password
-  if(strlen($datosFinales["pass2"]) === 0){
-    $errores["pass2"] = "El campo no puede estar vacío.";
-  } else if($datosFinales["pass"] !== $datosFinales["pass2"]){
-    $errores["pass2"] = "Las contraseñas no coiniceden";
+  if(strlen($datosFinales["password"]) === 0){
+    $errores["repetirContrasenia"] = "El campo no puede estar vacío.";
+  } else if($datosFinales["password"] !== $datosFinales["repetirContrasenia"]){
+    $errores["repetirContrasenia"] = "Las contraseñas no coiniceden";
   }
 
   return $errores;
@@ -62,8 +69,9 @@ function armarUsuario(){
   return [
     "id" => nextId(),
     "nombre" => trim($_POST["name"]),
+    "apellido" => trim($_POST["apellido"]),
     "email" =>  trim($_POST["email"]),
-    "password" => password_hash($_POST["pass"], PASSWORD_DEFAULT),
+    "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
   ];
 }
 
@@ -78,7 +86,12 @@ function guardarUsuario($user){
 
 function buscarUsuarioPorMail($email){
   //¿Qué pasa si no hay archivo .json
+  if (file_exists("db.json")){
+
   $json = file_get_contents("db.json");
+} else {
+  $json = "";
+}
   $array = json_decode($json, true);
 
   foreach ($array["usuarios"] as $usuario) {
@@ -105,12 +118,12 @@ function validarLogin($datos){
   }
 
   //Password
-  if(strlen($datos["pass"]) == 0){
-    $errores["pass"] = "El campo password debe estar completo";
+  if(strlen($datos["password"]) == 0){
+    $errores["password"] = "El campo password debe estar completo";
   } else {
     $usuario = buscarUsuarioPorMail($datos["email"]);
-    if( !password_verify($datos["pass"], $usuario["password"]) ){
-    $errores["pass"] = "La contraseña ingresada es incorrecta";
+    if( !password_verify($datos["password"], $usuario["password"]) ){
+    $errores["password"] = "La contraseña ingresada es incorrecta";
     }
   }
 

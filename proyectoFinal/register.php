@@ -6,6 +6,7 @@ include "funciones.php";
 $errores = [];
 $nombreOk = "";
 $emailOk = "";
+$apellidoOk = "";
 
 //si el formulario viene por POST;
 
@@ -13,27 +14,28 @@ if($_POST){
 
   //tenemos que detectar errores y mostrarlos al usuario.
   $errores = validarRegistro($_POST);
-
+var_dump($errores);
   $nombreOk = trim($_POST["name"]);
   $emailOk = trim($_POST["email"]);
+  $apellidoOk = trim($_POST["apellido"]);
 
   // Opcional crear if para cada asignación de datos correctos. Solo necesitamos colocar la cariable en el value.
   // if(!isset($errores["email"])){
   //   $emailOk = $_POST["email"];
   // }
-  $hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+  $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
   $okPass = password_verify("123", $hash);
 
 
   //Si no hay errores;
   if(!$errores){
     // Crear un usuario
-    //$usuario = armarUsuario();
-    $usuario = new Usuario($_POST);
+    $usuario = armarUsuario();
 
+   $file = "db.json";
     //Guardarlo en alguna parte
     //guardarUsuario($usuario);
-    $json->guardarUsuario($usuario, $file);
+    guardarUsuario($usuario, $file);
 
     //Subir la imagen de perfil
 
@@ -120,44 +122,47 @@ if($_POST){
             <?php else: ?>
             <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nombreOk ?>">
             <?php endif ?>
-
-
-          </div>
+            </div>
           <!-- form-group// -->
+          <div class="form-group input-group">
+            <!-- cuadradito apellido-->
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+
+            <?php if(isset($errores["apellido"])):?>
+            <input name="apellido" class="form-control" placeholder="Apellido" type="text" value ="" />
+            <span class="small"></span>
+          <?php else: ?>
+          <input type="text" id="apellido" class="form-control" placeholder="Apellido" name="apellido" value="<?= $apellidoOk ?>">
+          <?php endif ?>
+          </div>
+
 
           <div class="form-group input-group">
+
+
             <!-- cuadradito email-->
-            <div class="input-group-prepend">
+              <div class="input-group-prepend">
               <span class="input-group-text">
                 <i class="fa fa-envelope"></i>
               </span>
-
-            </div>
+              </div>
 
             <?php if(isset($errores["email"])):?>
 
             <input name="email" class="form-control" placeholder="Email" type="email" />
           <?php else: ?>
            <input type="text" id="email" class="form-control" placeholder="email" name="email" value="<?= $emailOk?>">
-         <?php endif?>
+          <?php endif?>
 
           </div>
           <!-- form-group// -->
 
-          <div class="form-group input-group">
-            <!-- cuadradito tel-->
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-phone"></i>
-              </span>
-            </div>
-            <select class="custom-select" style="max-width: 120px;">
-              <option selected="">+54</option>
-            </select>
-            <input name="" class="form-control" placeholder="Telefono" type="text" />
-          </div>
-          <!-- form-group// -->
 
+          <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
@@ -167,11 +172,11 @@ if($_POST){
             <?php if(isset($errores["password"])):?>
             <input name="password" class="form-control" placeholder="Contraseña" type="password" />
           <?php else: ?>
-           <input type="pass" id="pass" class="form-control" placeholder="Contraseña" name="pass" value="">
+           <input type="password" id="pass" class="form-control" placeholder="Contraseña" name="password" value="">
          <?php endif?>
           </div>
           <!-- form-group// -->
-        
+
 
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -179,10 +184,10 @@ if($_POST){
                 <i class="fa fa-lock"></i>
               </span>
             </div>
-            <?php if(isset($errores["password"])):?>
-            <input name="pass2" class="form-control" placeholder="Repetir Contraseña" type="password" />
+            <?php if(isset($errores["repetirContrasenia"])):?>
+            <input name="repetirContrasenia" class="form-control" placeholder="Repetir Contraseña" type="password" />
           <?php else: ?>
-           <input type="pass" id="pass" class="form-control" placeholder="Repetir contraseña" name="pass" value="">
+           <input type="password" id="pass" class="form-control" placeholder="Repetir contraseña" name="repetirContrasenia" value="">
          <?php endif?>
           </div>
           <!-- form-group// -->

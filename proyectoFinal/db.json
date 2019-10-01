@@ -1,0 +1,18 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "rodrigo",
+            "apellido": "villalba",
+            "email": "rodrigo@gmail.com",
+            "password": "$2y$10$lNkhXqVlavU2v8a4u7QLM.DUvKJHlll7EmRcwuoe6p0POrBcJeAKm"
+        },
+        {
+            "id": 2,
+            "nombre": "dylan",
+            "apellido": "noso",
+            "email": "dylan@dh.com",
+            "password": "$2y$10$zmCRpcZmBK.THJ15YIIbouQYcgQFqXL35hhjjdDw\/1g88Pfy6mAoS"
+        }
+    ]
+}
