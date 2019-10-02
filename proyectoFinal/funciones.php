@@ -139,6 +139,8 @@ function validarLogin($datos){
 
 function loguearUsuario(){
   $_SESSION["email"] = $_POST["email"];
+  $usuario = buscarUsuarioPorMail ($_POST ["email"]);
+  $_SESSION ["nombre"] = $usuario ["nombre"];
 }
 
 function usuarioLogueado(){

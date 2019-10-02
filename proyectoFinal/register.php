@@ -36,8 +36,9 @@ var_dump($errores);
     //Guardarlo en alguna parte
     //guardarUsuario($usuario);
     guardarUsuario($usuario, $file);
-
-    //Redirige a página Exito;
+    //Loguea el usuario en SESSION
+    loguearUsuario();
+    //Redirige a página Exito y coloca el dato nombre en Nav
     header("Location:home.php");
     exit;
     }

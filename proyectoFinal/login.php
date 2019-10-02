@@ -8,6 +8,8 @@ if($_POST){
 
   if(!$errores){
     loguearUsuario();
+    var_dump($_SESSION);
+    exit;
     header("Location:home.php");
     exit;
   }

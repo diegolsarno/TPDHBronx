@@ -20,6 +20,41 @@
             "apellido": "perez",
             "email": "j@p.com",
             "password": "$2y$10$Zt3htewmxzpItTvl\/gGTG.mCF2Mzg1XvLR8cUGlY36ZxQVm0LUO1e"
+        },
+        {
+            "id": 4,
+            "nombre": "diego",
+            "apellido": "sarno",
+            "email": "diegolsarno@gmail.com",
+            "password": "$2y$10$b4BxDhc0O8UDPGdbUvAaP.1Rvn76XIagDLVwU4FtsqgaOVNgUMUV2"
+        },
+        {
+            "id": 5,
+            "nombre": "patricio",
+            "apellido": "sarno",
+            "email": "pato@gmail.com",
+            "password": "$2y$10$O0WOie\/2t1sY0t\/UPk\/Q8.\/dlTjGKeQSBJkHPYD2YpqA3Bpst4Gte"
+        },
+        {
+            "id": 6,
+            "nombre": "Juan",
+            "apellido": "Perez",
+            "email": "juanperez@gmail.com",
+            "password": "$2y$10$IiR3.bDXZ1.MC9QVvLwdreup.23GSnAGB2Yztk6NRja1DSSfw5qei"
+        },
+        {
+            "id": 7,
+            "nombre": "Pedro",
+            "apellido": "Lopez",
+            "email": "pedro@gmail.com",
+            "password": "$2y$10$ow3VpsXSTZERnypTGruAduwuMc0hZprmk4vSHM6qknwkszIZO5v2O"
+        },
+        {
+            "id": 8,
+            "nombre": "belen",
+            "apellido": "iocca",
+            "email": "bel@gmail.com",
+            "password": "$2y$10$oAN7HuLzSPySVOcgHSmtPOt8M8QnNX33wdBAQOExfeAN09rGpYSeK"
         }
     ]
 }
