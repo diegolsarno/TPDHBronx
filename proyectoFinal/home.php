@@ -46,7 +46,7 @@ include "funciones.php";
 				<a class="nav-link" href="register.php">LOG OUT</a>
 				<?php endif ?>
 				</li>
-				
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           PRODUCTOS
@@ -59,7 +59,7 @@ include "funciones.php";
           <a class="dropdown-item" href="#">Sillones</a>
         </div>
       </li>
-	  <li>
+	  <li class="navbar-text">
 				<?php if(isset($_SESSION)):?>
 				<p>Bienvenido
 				<?=$_SESSION["nombre"]?>
