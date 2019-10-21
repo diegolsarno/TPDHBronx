@@ -55,6 +55,13 @@
             "apellido": "iocca",
             "email": "bel@gmail.com",
             "password": "$2y$10$oAN7HuLzSPySVOcgHSmtPOt8M8QnNX33wdBAQOExfeAN09rGpYSeK"
+        },
+        {
+            "id": 9,
+            "nombre": "rodrigo",
+            "apellido": "villalba",
+            "email": "pollo_2@hotmail.com",
+            "password": "$2y$10$vshLo5lFt1S1tWVjp3nN1uEaYx2deLZiHdIUQyywtK72ZkBUFJPsu"
         }
     ]
 }
