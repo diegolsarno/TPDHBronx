@@ -61,7 +61,7 @@ include "funciones.php";
       </li>
 	  <li class="navbar-text">
 				<?php if(isset($_SESSION)):?>
-				<p>Bienvenido
+				<p class="bienvenido">Bienvenido
 				<?=$_SESSION["nombre"]?>
 				</p>
 				<?php endif ?>
