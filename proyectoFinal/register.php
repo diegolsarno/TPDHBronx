@@ -1,6 +1,7 @@
 <?php
-include "funciones.php";
 
+include "funciones.php";
+include "connection.php";
 
 
 $errores = [];
