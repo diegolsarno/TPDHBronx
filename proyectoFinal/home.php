@@ -52,11 +52,13 @@ include "funciones.php";
           PRODUCTOS
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Mesas</a>
+          <a class="dropdown-item" href="#">Living</a>
 		  <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sillas</a>
+          <a class="dropdown-item" href="#">Comedor</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sillones</a>
+		  <a class="dropdown-item" href="#">Dormitorio</a>
+		  <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Baño</a>
         </div>
       </li>
 	  <li class="navbar-text">
