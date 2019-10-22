@@ -2,7 +2,7 @@
 include "connection.php";
 
 
-$query=$db->prepare("INSERT INTO users VALUES(default,:nombre,:apellido,:email)");
+$query=$db->prepare("INSERT INTO bronx.users VALUES(:nombre,:apellido,:email)");
 
 $query->bindValue(":nombre", "Roberto");
 $query->bindValue(":apellido", "Lopez");
