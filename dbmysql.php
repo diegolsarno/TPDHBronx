@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+
 
 class dbmysql extends db;
 {
