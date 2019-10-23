@@ -31,6 +31,7 @@ class Usuario
       $this->password = password_hash($array["password"], PASSWORD_DEFAULT);
     }
     $this->name = $array["name"];
+    $this->name = $array["apellido"];
     $this->email = $array["email"];
 
 

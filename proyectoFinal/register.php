@@ -19,11 +19,11 @@ $emailOk = "";
 if($_POST){
 
   //tenemos que detectar errores y mostrarlos al usuario.
-  $errores = Validaciones::validarRegistro($_POST);
+  $errores = Validator::validarRegistro($_POST);
    var_dump($errores);
   $nombreOk = trim($_POST["name"]);
-  $emailOk = trim($_POST["email"]);
   $apellidoOk = trim($_POST["apellido"]);
+  $emailOk = trim($_POST["email"]);
 
   $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
   $okPass = password_verify("123", $hash);
@@ -38,7 +38,7 @@ if($_POST){
     //Guardarlo en alguna parte
     //guardarUsuario($usuario);
     $ext = pathinfo($_FILES['name'], PATHINFO_EXTENSION);
-    
+
     //Loguea el usuario en SESSION
     $auth->loguearUsuario($_POST['email']);
     //Redirige a página Exito y coloca el dato nombre en Nav

@@ -2,7 +2,7 @@
 /**
  *
  */
-class Validator
+class validator
 {
 
   public static function validarRegistro($datos){
