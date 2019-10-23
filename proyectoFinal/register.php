@@ -1,29 +1,30 @@
 <?php
+//include"init.php;
+include "init.php";
 
-include "funciones.php";
-
+if($auth->usuarioLogueado()){
+  header("Location:home.php");
+  exit;
+}
 
 
 $errores = [];
 $nombreOk = "";
-$emailOk = "";
 $apellidoOk = "";
+$emailOk = "";
+
 
 //si el formulario viene por POST;
 
 if($_POST){
 
   //tenemos que detectar errores y mostrarlos al usuario.
-  $errores = validarRegistro($_POST);
-var_dump($errores);
+  $errores = Validator::validarRegistro($_POST);
+   var_dump($errores);
   $nombreOk = trim($_POST["name"]);
-  $emailOk = trim($_POST["email"]);
   $apellidoOk = trim($_POST["apellido"]);
+  $emailOk = trim($_POST["email"]);
 
-
-  // if(!isset($errores["email"])){
-  //   $emailOk = $_POST["email"];
-  // }
   $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
   $okPass = password_verify("123", $hash);
 
@@ -31,15 +32,18 @@ var_dump($errores);
   //Si no hay errores;
   if(!$errores){
     // Crear un usuario
-    $usuario = armarUsuario();
+    $usuario = new Usuario($_POST);
 
-   $file = "db.json";
+   $db->guardarUsuario($usuario, $file);
     //Guardarlo en alguna parte
     //guardarUsuario($usuario);
-    guardarUsuario($usuario, $file);
+    $ext = pathinfo($_FILES['name'], PATHINFO_EXTENSION);
+
     //Loguea el usuario en SESSION
-    loguearUsuario();
+    $auth->loguearUsuario($_POST['email']);
     //Redirige a página Exito y coloca el dato nombre en Nav
+
+
     header("Location:home.php");
     exit;
     }

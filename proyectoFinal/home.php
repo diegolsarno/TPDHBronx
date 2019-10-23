@@ -1,9 +1,24 @@
 <?php
-include "funciones.php";
+include "init.php";
 //include "logout.php";
 
 
+if(isset($_COOKIE['email'])){
+  $auth->loguearUsuario($_COOKIE['email']);
+}
+
+if($auth->usuarioLogueado()){
+    $usuario = $db->buscarUsuarioPorMail($_SESSION['email']);
+
+} else {
+  $usuario = "";
+}
+
+
+//var_dump($_SESSION, $usuario);
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +48,7 @@ include "funciones.php";
 						<a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-					  <?php if(!usuarioLogueado()):?>
+					  <?php if(!$auth->usuarioLogueado()):?>
 						<a class="nav-link" href="register.php">REGISTER</a>
 					</li>
 					<li class="nav-item">
@@ -42,7 +57,7 @@ include "funciones.php";
 					</li>
 				</li>
 				<li>
-				<?php if(usuarioLogueado()):?>
+				<?php if($auth->usuarioLogueado()):?>
 				<a class="nav-link" href="register.php">LOG OUT</a>
 				<?php endif ?>
 				</li>

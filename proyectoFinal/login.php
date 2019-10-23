@@ -1,20 +1,30 @@
 <?php
-include "funciones.php";
+// include "funciones.php";
+include "init.php";
+
+if($auth->usuarioLogueado()){
+  header("Location:home.php");
+  exit;
+}
 $errores = [];
 
 if($_POST){
 
-  $errores = validarLogin($_POST);
+  // $errores = validarLogin($_POST);
+  $errores = validator::validarLogin($_POST);
+  var_dump($errores);
 
   if(!$errores){
-    loguearUsuario();
-
-    
-    header("Location:home.php");
-    exit;
+    $auth->loguearUsuario($_POST['email']);
+      header("Location:home.php");
+      exit;
   }
 
 }
+
+
+
+
 
 ?>
 
