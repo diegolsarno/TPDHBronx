@@ -11,7 +11,7 @@ $errores = [];
 if($_POST){
 
   // $errores = validarLogin($_POST);
-  $errores = Validator::validarLogin($_POST);
+  $errores = validator::validarLogin($_POST);
   var_dump($errores);
 
   if(!$errores){
