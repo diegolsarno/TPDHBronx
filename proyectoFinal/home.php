@@ -200,7 +200,7 @@ if($auth->usuarioLogueado()){
 								<div class="col-4">
 									<ul class="text-uppercase">
 										<li>
-											<p href="#!">Contacto</p>
+											<strong><p href="#!">Contacto</p></strong>
 										</li>
 										<li>
 											<a href="#!"></a>
