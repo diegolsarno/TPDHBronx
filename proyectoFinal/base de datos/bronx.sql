@@ -1,1 +1,1 @@
-SELECT * FROM bronx.users;
+SELECT * FROM bronx;

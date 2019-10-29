@@ -7,7 +7,7 @@ private $dbMysql;
 
 public function __construct()
 {
-$dsn = "mysql:host=127.0.0.1;dbname=bronx.usuarios;port=3306";
+$dsn = "mysql:host=127.0.0.1;dbname=bronx;port=3306";
 $user = "root";
 $pass = "";
 
@@ -24,7 +24,7 @@ catch (\Exception $e) {
 
 public function guardarUsuario(Usuario $user, string $file = null){
 
-$stmt = $this->dbMysql->prepare("INSERT INTO usuarios VALUES(default, :name,:apellido, :email, :password)");
+$stmt = $this->dbMysql->prepare("INSERT INTO usuarios VALUES(default, :name, :apellido, :email, :password)");
 
 $stmt->bindValue(":name", $user->getName());
 $stmt->bindValue(":apellido", $apellido->getApellido());
@@ -36,7 +36,7 @@ $stmt->execute();
 
 public function buscarUsuarioPorMail(string $email){
 
-$stmt = $this->dbMysql->prepare("SELECT * FROM usuarios WHERE email = :email");
+$stmt = $this->dbMysql->prepare("SELECT * FROM bronx WHERE email = :email");
 
 $stmt->bindValue(":email, $email");
 $stmt->execute();
