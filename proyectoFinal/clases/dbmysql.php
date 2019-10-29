@@ -12,8 +12,8 @@ $user = "root";
 $pass = "";
 
 try {
-$this->$dbMysql = new PDO($dsn, $user, $pass);
-$this->$dbMysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$this->dbMysql = new PDO($dsn, $user, $pass);
+$this->dbMysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (\Exception $e) {
     echo "Hubo un error. Mensaje:";
@@ -27,7 +27,7 @@ public function guardarUsuario(Usuario $user, string $file = null){
 $stmt = $this->dbMysql->prepare("INSERT INTO usuarios VALUES(default, :name, :apellido, :email, :password)");
 
 $stmt->bindValue(":name", $user->getName());
-$stmt->bindValue(":apellido", $apellido->getApellido());
+$stmt->bindValue(":apellido", $user->getApellido());
 $stmt->bindValue(":email", $user->getEmail());
 $stmt->bindValue(":password", $user->getPassword());
 
@@ -36,9 +36,9 @@ $stmt->execute();
 
 public function buscarUsuarioPorMail(string $email){
 
-$stmt = $this->dbMysql->prepare("SELECT * FROM bronx WHERE email = :email");
+$stmt = $this->dbMysql->prepare("SELECT * FROM usuarios WHERE email = :email");
 
-$stmt->bindValue(":email, $email");
+$stmt->bindValue(":email", $email);
 $stmt->execute();
 
 $usuarioArray = $stmt->fetch(PDO::FETCH_ASSOC);

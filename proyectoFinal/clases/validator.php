@@ -23,10 +23,10 @@ class validator
     //=====================
 
     //Nombre
-    if(strlen($datosFinales["name"]) == 0){
-      $errores["name"] = "El campo nombre debe estar completo";
-    } else if (!ctype_alpha($datosFinales["name"])){
-      $errores["name"] = "Por favor ingrese caracteres alfabéticos";
+    if(strlen($datosFinales["nombre"]) == 0){
+      $errores["nombre"] = "El campo nombre debe estar completo";
+    } else if (!ctype_alpha($datosFinales["nombre"])){
+      $errores["nombre"] = "Por favor ingrese caracteres alfabéticos";
     } //Validar con expresion regular que permita espacios intermedios.
 
     //Email

@@ -14,7 +14,7 @@ class Auth
   public function loguearUsuario($email){
     $_SESSION["email"] = $email;
 
-    if(isset($_POST["Recordarme"])){ //Seteamos cookie si el usuario tildó la casilla "Recordarme"
+    if(isset($_POST["recordarme"])){ //Seteamos cookie si el usuario tildó la casilla "Recordarme"
       setcookie('email', $email, time()+60*60);
     }
 

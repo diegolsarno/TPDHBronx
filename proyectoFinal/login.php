@@ -95,7 +95,7 @@ if($_POST){
             <button type="submit" class="btn btn-primary btn-block"> LOGIN</button>
             <br>
               <div class="text-center">
-                <input type="checkbox" name="recordar" checked>
+                <input type="checkbox" name="recordarme" checked>
                 <label class="form-check-label" for="exampleCheck1">  Recordarme</label>
               </div>
 

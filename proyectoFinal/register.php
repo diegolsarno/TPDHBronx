@@ -114,15 +114,15 @@ if($_POST){
               </span>
             </div>
 
-              <?php if(isset($errores["name"])):?>
+              <?php if(isset($errores["nombre"])):?>
             <!--  Si hay errores mostramos el campo input vacío  -->
 
-            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="">
+            <input type="text" id="name" class="form-control" placeholder="Nombre" name="nombre" value="">
 
             <span class="small"></span>
 
             <?php else: ?>
-            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nombreOk ?>">
+            <input type="text" id="name" class="form-control" placeholder="Nombre" name="nombre" value="<?= $nombreOk ?>">
             <?php endif ?>
             </div>
           <!-- form-group// -->
@@ -189,7 +189,7 @@ if($_POST){
             <?php if(isset($errores["repetirContrasenia"])):?>
             <input name="repetirContrasenia" class="form-control" placeholder="Repetir Contraseña" type="password" />
           <?php else: ?>
-           <input type="password" id="pass" class="form-control" placeholder="Repetir contraseña" name="repetirContrasenia" value="">
+           <input type="password" id="pass" class="form-control" placeholder="Repetir contraseña" name="pass2" value="">
          <?php endif?>
           </div>
           <!-- form-group// -->
