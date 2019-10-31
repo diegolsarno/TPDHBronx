@@ -101,7 +101,7 @@ if($_POST){
 
             <!-- form-group// -->
 
-            <p class="text-center col-12">No tienes una cuenta?<a href="">   Registrate</a> </p>
+            <p class="text-center col-12">No tienes una cuenta?<a href="register.php">   Registrate</a> </p>
           </form>
         </div>
       </div>

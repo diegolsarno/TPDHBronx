@@ -201,7 +201,7 @@ if($_POST){
           </div>
           <!-- form-group// -->
 
-          <p class="text-center">Tenes una cuenta? <a href="">LOGIN</a></p>
+          <p class="text-center">Tenes una cuenta? <a href="login.php">LOGIN</a></p>
         </form>
       </article>
     </div>
